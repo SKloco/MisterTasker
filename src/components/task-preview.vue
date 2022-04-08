@@ -6,7 +6,11 @@
         <td>{{ task.importance }}</td>
         <td>{{ task.status }}</td>
         <td>{{ task.triesCount }}</td>
-        <td>{{ actions }}</td>
+        <td>
+          <button v-if="task.status !== 'running' ">
+            {{ action }}
+          </button>
+        </td>
       </tr>
     </table>
   </section>
@@ -22,7 +26,13 @@ export default {
     return {}
   },
   methods: {},
-  computed: {},
+  computed: {
+    action() {
+      if (this.task.status === 'new') return 'Start'
+      if (this.task.status === 'falied') return 'Retry'
+      if (this.task.status === 'done') return 'Delete'
+    },
+  },
   components: {},
   unmounted() {},
 }

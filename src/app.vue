@@ -2,11 +2,6 @@
   <section>
     <app-header />
     <app-Main />
-    <ul>
-      <li v-for="task in tasks" :key="task._id" >{{task.title}}</li>
-      <!-- <task-preview v-for="task in tasks" :key="task._id" :task="task"/> -->
-    </ul>
-    <!-- <div>{{tasks}}</div> -->
   </section>
 </template>
 
