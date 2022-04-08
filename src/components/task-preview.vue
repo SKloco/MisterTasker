@@ -1,6 +1,4 @@
 <template>
-  <section class="task-preview">
-    <table>
       <tr>
         <td>{{ task.title }}</td>
         <td class="text-center">{{ task.importance }}</td>
@@ -12,8 +10,6 @@
           </button>
         </td>
       </tr>
-    </table>
-  </section>
 </template>
 
 <script>

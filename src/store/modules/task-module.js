@@ -20,9 +20,6 @@ export default {
     },
     saveTask(state, { savedTask }) {
       const idx = state.tasks.findIndex((currTask) => currTask._id === savedTask._id)
-      // console.log('savedTask', savedTask)
-      // state.tasks.map((t) => console.log(t._id))
-      // console.log('idx', idx)
       if (idx !== -1) state.tasks.splice(idx, 1, savedTask)
       else state.tasks.push(savedTask)
     },
@@ -71,12 +68,12 @@ export default {
       commit({ type: 'setFilter', filterBy })
       dispatch({ type: 'loadTasks' })
     },
-    async startTask({ commit , dispatch }, { taskId }) {
-      try {
+    async startTask({ commit }, { taskId }) {
+      try{
         const savedTask = await taskService.start(taskId)
         commit({ type: 'saveTask', savedTask })
-      } catch (err) {
-        console.log('error:', err)
+      } catch(err){
+        console.log('new err', err);
         throw err
       }
     },
