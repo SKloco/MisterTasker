@@ -8,8 +8,8 @@
         <th>TriesCount</th>
         <th>Actions</th>
       </tr>
+      <task-preview v-for="task in tasks" :key="task._id" :task="task" />
     </table>
-        <task-preview  v-for="task in tasks" :key="task._id" :task="task"/>
   </section>
 </template>
 

@@ -1,5 +1,5 @@
 import { httpService } from './http.service'
-import { utilService } from './util.service'
+// import { utilService } from './util.service'
 const ENDPOINT = 'task'
 
 export const taskService = {
@@ -8,6 +8,7 @@ export const taskService = {
   save,
   getById,
   getEmptyTask,
+  start,
 }
 
 async function query(filterBy = {}) {
@@ -26,8 +27,11 @@ function remove(taskId) {
   return httpService.delete(`${ENDPOINT}/${taskId}`)
 }
 
+function start(taskId){
+  return httpService.get(`${ENDPOINT}/${taskId}/start`)
+}
+
 function getEmptyTask() {
-  // const img = `src/assets/images/${utilService.getRandomInt(0, 11)}.png`
   return {
     title: '',
     status: '',
