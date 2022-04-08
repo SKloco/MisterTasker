@@ -1,33 +1,37 @@
 .task-preview {
-    td {
-      border: 1px solid #dddddd;
-      padding: 8px;
-      width: 140px;
-      &.done {
-        color: $green;
-      }
-      &.failed{
-        color: $red;
-      }
-      &.new{
-        color: $blue;
-      }
-      &.running{
-        color: $yellow;
-      }
+  font-family: OpenSans-Regular;
+  border-collapse: collapse;
+  // width: 100%;
 
+  td,
+  th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    width: 140px;
+    &.done {
+      color: $green;
     }
+    &.failed {
+      color: $red;
+    }
+    &.new {
+      color: $blue;
+    }
+    &.running {
+      color: $yellow;
+    }
+  }
 
-    button {
-      color: white;
-      &.done {
-        background-color: $red;
-      }
-      &.failed{
-        background-color: $green;
-      }
-      &.new{
-        background-color: $green;
-      }
+  button {
+    color: white;
+    &.done {
+      background-color: $red;
     }
+    &.failed {
+      background-color: $green;
+    }
+    &.new {
+      background-color: $green;
+    }
+  }
 }
