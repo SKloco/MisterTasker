@@ -8,16 +8,16 @@
         text-align: center;
         font-family: OpenSans-Bold;
         &.blue{
-            background-color: blue;
+            background-color: $blue;
         }
         &.red{
-            background-color: red;
+            background-color: $red;
         }
         &.green{
-            background-color: green;
+            background-color: $green;
         }
         &.yellow{
-            background-color: yellow;
+            background-color: $yellow;
         }
 
     }

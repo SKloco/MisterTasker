@@ -8,6 +8,7 @@ export const taskService = {
   save,
   getById,
   getEmptyTask,
+  start,
 }
 
 async function query(filterBy = {}) {
@@ -24,6 +25,10 @@ async function save(task) {
 
 function remove(taskId) {
   return httpService.delete(`${ENDPOINT}/${taskId}`)
+}
+
+function start(taskId){
+  return httpService.get(`${ENDPOINT}/${taskId}/start`)
 }
 
 function getEmptyTask() {

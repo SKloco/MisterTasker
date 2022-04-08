@@ -1,19 +1,44 @@
-.task-preview{
-    table {
-        font-family: OpenSans-Regular;
-        border-collapse: collapse;
-        // width: 100%;
+.task-preview {
+  table {
+    font-family: OpenSans-Regular;
+    border-collapse: collapse;
+    // width: 100%;
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      width: 140px;
+      &.done {
+        color: $green;
       }
-      
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        width: 140px;
+      &.failed{
+        color: $red;
       }
-      
-      tr:nth-child(even) {
-        width: 140px;
-        background-color: #dddddd;
+      &.new{
+        color: $blue;
       }
+      &.running{
+        color: $yellow;
+      }
+
+    }
+
+    tr:nth-child(even) {
+      width: 140px;
+      background-color: #dddddd;
+    }
+    button {
+      color: white;
+      &.done {
+        background-color: $red;
+      }
+      &.failed{
+        background-color: $green;
+      }
+      &.new{
+        background-color: $green;
+      }
+    }
+  }
 }
