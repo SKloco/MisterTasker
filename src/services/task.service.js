@@ -9,6 +9,7 @@ export const taskService = {
   getById,
   getEmptyTask,
   start,
+  toggleWorker
 }
 
 async function query(filterBy = {}) {
@@ -29,6 +30,11 @@ function remove(taskId) {
 
 function start(taskId){
   return httpService.get(`${ENDPOINT}/${taskId}/start`)
+}
+
+function toggleWorker(isStarted){
+  console.log('task service');
+  return httpService.get(`${ENDPOINT}/toggleWorker/${isStarted}`)
 }
 
 function getEmptyTask() {

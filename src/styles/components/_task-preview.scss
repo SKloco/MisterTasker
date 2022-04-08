@@ -1,11 +1,5 @@
 .task-preview {
-  table {
-    font-family: OpenSans-Regular;
-    border-collapse: collapse;
-    // width: 100%;
-
-    td,
-    th {
+    td {
       border: 1px solid #dddddd;
       padding: 8px;
       width: 140px;
@@ -24,10 +18,6 @@
 
     }
 
-    tr:nth-child(even) {
-      width: 140px;
-      background-color: #dddddd;
-    }
     button {
       color: white;
       &.done {
@@ -40,5 +30,4 @@
         background-color: $green;
       }
     }
-  }
 }

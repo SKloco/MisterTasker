@@ -1,5 +1,5 @@
 <template>
-      <tr>
+      <tr class="task-preview">
         <td>{{ task.title }}</td>
         <td class="text-center">{{ task.importance }}</td>
         <td :class="task.status">{{ task.status }}</td>

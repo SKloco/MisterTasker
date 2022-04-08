@@ -77,5 +77,14 @@ export default {
         throw err
       }
     },
+    async toggleWorker({ commit }, { isStarted }) {
+      try{
+        console.log('task-module');
+        taskService.toggleWorker(isStarted)
+      } catch(err){
+        console.log('new err', err);
+        throw err
+      }
+    },
   },
 }
