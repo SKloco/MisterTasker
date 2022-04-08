@@ -1,0 +1,23 @@
+.app-buttons{
+    display: flex;
+    justify-content: space-between;
+    .btn{
+        color: white;
+        width: 100px;
+        text-align: center;
+        font-family: OpenSans-Bold;
+        &.blue{
+            background-color: blue;
+        }
+        &.red{
+            background-color: red;
+        }
+        &.green{
+            background-color: green;
+        }
+        &.yellow{
+            background-color: yellow;
+        }
+
+    }
+}
