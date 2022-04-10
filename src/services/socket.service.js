@@ -2,7 +2,6 @@ import io from 'socket.io-client'
 
 export const SOCKET_EVENT_TASK_CHANGED = 'task-changed';
 
-
 const baseUrl = (process.env.NODE_ENV === 'production')? '' : '//localhost:3030'
 export const socketService = createSocketService()
 // export const socketService = createDummySocketService()

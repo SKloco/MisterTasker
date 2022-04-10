@@ -1,4 +1,5 @@
 import { httpService } from './http.service'
+
 // import { utilService } from './util.service'
 const ENDPOINT = 'task'
 
@@ -39,12 +40,12 @@ function toggleWorker(isStarted){
 function getEmptyTask() {
   return {
     title: '',
-    status: '',
+    status: 'new',
     description: '',
-    importance: '',
-    createdAt: '',
+    importance: 1,
+    createdAt: Date.now(),
     lastTriedAt: '',
-    triesCount: '',
+    triesCount: 0,
     doneAt: '',
     errors: [],
     lastTried: '',

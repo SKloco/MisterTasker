@@ -1,6 +1,6 @@
+import { SOCKET_EVENT_TASK_CHANGED } from '../../services/socket.service'
 import { taskService } from '../../services/task.service'
-import { socketService, SOCKET_EVENT_TASK_CHANGED } from '../../services/socket.service'
-
+import { socketService } from '../../services/socket.service'
 export default {
   state: {
     tasks: [],
@@ -37,7 +37,6 @@ export default {
         socketService.off(SOCKET_EVENT_TASK_CHANGED)
         socketService.on(SOCKET_EVENT_TASK_CHANGED, (task) => {
           commit({ type: 'saveTask', savedTask: task })
-          console.log('socket in front work')
         })
       } catch (err) {
         console.log('err', err)
@@ -85,7 +84,6 @@ export default {
     },
     async toggleWorker({ commit }, { isStarted }) {
       try {
-        console.log('task-module')
         taskService.toggleWorker(isStarted)
       } catch (err) {
         console.log('new err', err)
