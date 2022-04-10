@@ -1,4 +1,5 @@
 import { taskService } from '../../services/task.service'
+import { socketService, SOCKET_EVENT_TASK_CHANGED } from '../../services/socket.service'
 
 export default {
   state: {
@@ -33,6 +34,11 @@ export default {
       try {
         const tasks = await taskService.query(state.filterBy)
         commit({ type: 'setTasks', tasks })
+        socketService.off(SOCKET_EVENT_TASK_CHANGED)
+        socketService.on(SOCKET_EVENT_TASK_CHANGED, (task) => {
+          commit({ type: 'saveTask', savedTask: task })
+          console.log('socket in front work')
+        })
       } catch (err) {
         console.log('err', err)
       } finally {
@@ -69,20 +75,20 @@ export default {
       dispatch({ type: 'loadTasks' })
     },
     async startTask({ commit }, { taskId }) {
-      try{
+      try {
         const savedTask = await taskService.start(taskId)
         commit({ type: 'saveTask', savedTask })
-      } catch(err){
-        console.log('new err', err);
+      } catch (err) {
+        console.log('new err', err)
         throw err
       }
     },
     async toggleWorker({ commit }, { isStarted }) {
-      try{
-        console.log('task-module');
+      try {
+        console.log('task-module')
         taskService.toggleWorker(isStarted)
-      } catch(err){
-        console.log('new err', err);
+      } catch (err) {
+        console.log('new err', err)
         throw err
       }
     },

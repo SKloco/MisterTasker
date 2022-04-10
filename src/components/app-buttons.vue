@@ -15,7 +15,6 @@ export default {
   },
   methods: {
     toggleWorker(isStarted) {
-      console.log('app-btns cmp');
       this.$store.dispatch({ type: 'toggleWorker', isStarted })
     },
   },

@@ -28,12 +28,10 @@ export default {
     },
     start() {
       this.$store.dispatch({ type: 'startTask', taskId: this.task._id })
-      console.log('starting')
     },
     retry() {},
     delete() {
       this.$store.dispatch({ type: 'removeTask', taskId: this.task._id })
-      console.log('removing')
     },
   },
   computed: {

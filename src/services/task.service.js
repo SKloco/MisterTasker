@@ -33,7 +33,6 @@ function start(taskId){
 }
 
 function toggleWorker(isStarted){
-  console.log('task service');
   return httpService.get(`${ENDPOINT}/toggleWorker/${isStarted}`)
 }
 

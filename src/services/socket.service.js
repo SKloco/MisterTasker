@@ -1,9 +1,6 @@
 import io from 'socket.io-client'
 
-export const SOCKET_EMIT_USER_WATCH = 'user-watch';
-export const SOCKET_EVENT_USER_UPDATED = 'user-updated';
-export const SOCKET_EVENT_REVIEW_ADDED = 'review-added';
-export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you';
+export const SOCKET_EVENT_TASK_CHANGED = 'task-changed';
 
 
 const baseUrl = (process.env.NODE_ENV === 'production')? '' : '//localhost:3030'
@@ -72,12 +69,3 @@ function createDummySocketService() {
   }
   return socketService
 }
-
-
-// Basic Tests
-// function cb(x) {console.log('Got Baba:', x)}
-// socketService.on('baba', cb)
-// socketService.on('mama', console.log)
-// socketService.on('mama', alert)
-// socketService.emit('baba', 'DATA123')
-// socketService.off('baba', cb)
